@@ -53,6 +53,8 @@ class InstrScr(Screen):
             self.in_age.text = str(age)
         else:
             self.manager.current = 'pulse1'
+
+
 class PulseScr(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -139,7 +141,6 @@ class PulseScr2(Screen):
         lbl_result2 = Label(text='Результат після відпочинку:', halign='right')
         self.in_result2 = TextInput(text='0', multiline=False)
 
-
         self.in_result1.set_disabled(True)
         self.in_result2.set_disabled(True)
         line2.add_widget(lbl_result2)
@@ -191,6 +192,8 @@ class PulseScr2(Screen):
             else:
                 # переходим
                 self.manager.current = 'result'
+
+
 class Result(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -203,6 +206,8 @@ class Result(Screen):
     def before(self):
         global name
         self.instr.text = name + '\n' + test(p1, p2, p3, age)
+
+
 class HeartCheck(App):
     def build(self):
         sm = ScreenManager()
